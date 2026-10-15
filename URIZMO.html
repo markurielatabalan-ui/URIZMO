@@ -46,7 +46,7 @@
                 <span id="card-counter" class="text-xs text-slate-400">Card 1 of 8</span>
             </div>
             
-            <div class="perspective-1000 w-full max-w-xl mx-auto h-64 cursor-pointer" onclick="toggleCard(this)">
+            <div class="perspective-1000 w-full max-w-xl mx-auto h-64 cursor-pointer" onclick="toggleCard()">
                 <div id="flashcard-inner" class="relative w-full h-full duration-500 transform-style-3d shadow-2xl rounded-xl">
                     <div class="absolute inset-0 bg-slate-800 border-2 border-slate-700 rounded-xl p-6 flex flex-col justify-between backface-hidden">
                         <span class="text-xs uppercase tracking-widest text-indigo-400 font-bold" id="card-category">Core SQL</span>
@@ -55,7 +55,7 @@
                     </div>
                     <div class="absolute inset-0 bg-indigo-950 border-2 border-indigo-500/50 rounded-xl p-6 flex flex-col justify-between backface-hidden rotate-y-180">
                         <span class="text-xs uppercase tracking-widest text-cyan-400 font-bold">Answer & Syntax</span>
-                        <p id="card-answer" class="text-sm md:text-base text-slate-200">Used to retrieve data from a table[cite: 33]. Corresponds to projection ($\pi$) in relational algebra[cite: 37].</p>
+                        <p id="card-answer" class="text-sm md:text-base text-slate-200">Used to retrieve data from a table. Corresponds to projection in relational algebra.</p>
                         <code id="card-code" class="bg-slate-900 text-amber-300 p-2 rounded text-xs font-mono">SELECT A1, A2 FROM r WHERE P;</code>
                     </div>
                 </div>
@@ -69,27 +69,27 @@
 
         <section id="joins" class="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 shadow-xl space-y-6">
             <h3 class="text-xl font-bold text-indigo-300">🔗 SQL JOIN Clause Visualizer</h3>
-            <p class="text-sm text-slate-400">Used to combine rows from two or more tables based on a related column between them[cite: 25].</p>
+            <p class="text-sm text-slate-400">Used to combine rows from two or more tables based on a related column between them.</p>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div class="bg-slate-800 border border-slate-700 p-4 rounded-xl space-y-2">
                     <h4 class="font-bold text-cyan-400">INNER JOIN</h4>
-                    <p class="text-xs text-slate-300">Returns only rows that have matching values in both tables[cite: 26].</p>
+                    <p class="text-xs text-slate-300">Returns only rows that have matching values in both tables.</p>
                     <code class="block bg-slate-900 p-2 rounded text-xs text-amber-300 font-mono">SELECT * FROM A JOIN B ON A.id = B.id;</code>
                 </div>
                 <div class="bg-slate-800 border border-slate-700 p-4 rounded-xl space-y-2">
                     <h4 class="font-bold text-cyan-400">LEFT JOIN</h4>
-                    <p class="text-xs text-slate-300">Retrieves all rows from left table and matching rows from right[cite: 27].</p>
+                    <p class="text-xs text-slate-300">Retrieves all rows from left table and matching rows from right.</p>
                     <code class="block bg-slate-900 p-2 rounded text-xs text-amber-300 font-mono">SELECT * FROM A LEFT JOIN B ON A.id = B.id;</code>
                 </div>
                 <div class="bg-slate-800 border border-slate-700 p-4 rounded-xl space-y-2">
                     <h4 class="font-bold text-cyan-400">RIGHT JOIN</h4>
-                    <p class="text-xs text-slate-300">Retrieves all rows from right table and matching rows from left[cite: 28].</p>
+                    <p class="text-xs text-slate-300">Retrieves all rows from right table and matching rows from left.</p>
                     <code class="block bg-slate-900 border border-slate-700 p-2 rounded text-xs text-amber-300 font-mono">SELECT * FROM A RIGHT JOIN B ON A.id = B.id;</code>
                 </div>
                 <div class="bg-slate-800 border border-slate-700 p-4 rounded-xl space-y-2">
                     <h4 class="font-bold text-cyan-400">FULL JOIN</h4>
-                    <p class="text-xs text-slate-300">Combines results of both LEFT and RIGHT joins, returning all rows[cite: 29].</p>
+                    <p class="text-xs text-slate-300">Combines results of both LEFT and RIGHT joins, returning all rows.</p>
                     <code class="block bg-slate-900 p-2 rounded text-xs text-amber-300 font-mono">SELECT * FROM A FULL JOIN B ON A.id = B.id;</code>
                 </div>
             </div>
@@ -99,19 +99,19 @@
             <div class="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 space-y-4 shadow-xl">
                 <h3 class="text-lg font-bold text-indigo-300">📅 Date Arithmetic & Formatting</h3>
                 <ul class="space-y-3 text-sm text-slate-300">
-                    <li class="bg-slate-800 p-3 rounded-lg"><strong class="text-cyan-400">CURDATE():</strong> Returns current system date in YYYY-MM-DD format[cite: 3].</li>
-                    <li class="bg-slate-800 p-3 rounded-lg"><strong class="text-cyan-400">DATE_ADD():</strong> Adds intervals like days/weeks/months[cite: 4].</li>
-                    <li class="bg-slate-800 p-3 rounded-lg"><strong class="text-cyan-400">DATEDIFF vs TIMESTAMPDIFF:</strong> DATEDIFF computes total days[cite: 6]; TIMESTAMPDIFF allows flexible units[cite: 6].</li>
-                    <li class="bg-slate-800 p-3 rounded-lg"><strong class="text-cyan-400">DATE_FORMAT():</strong> Formats dates using string flags[cite: 7].</li>
+                    <li class="bg-slate-800 p-3 rounded-lg"><strong class="text-cyan-400">CURDATE():</strong> Returns current system date in YYYY-MM-DD format.</li>
+                    <li class="bg-slate-800 p-3 rounded-lg"><strong class="text-cyan-400">DATE_ADD():</strong> Adds intervals like days, weeks, or months to a date.</li>
+                    <li class="bg-slate-800 p-3 rounded-lg"><strong class="text-cyan-400">DATEDIFF vs TIMESTAMPDIFF:</strong> DATEDIFF computes total days difference; TIMESTAMPDIFF accepts flexible units like month or year.</li>
+                    <li class="bg-slate-800 p-3 rounded-lg"><strong class="text-cyan-400">DATE_FORMAT():</strong> Formats dates using custom string flags.</li>
                 </ul>
             </div>
 
             <div class="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 space-y-4 shadow-xl">
                 <h3 class="text-lg font-bold text-indigo-300">📊 Aggregates, GROUP BY & HAVING</h3>
                 <ul class="space-y-3 text-sm text-slate-300">
-                    <li class="bg-slate-800 p-3 rounded-lg"><strong class="text-cyan-400">Core Functions:</strong> COUNT()[cite: 15], SUM()[cite: 17], MAX()[cite: 18], MIN()[cite: 19].</li>
-                    <li class="bg-slate-800 p-3 rounded-lg"><strong class="text-cyan-400">GROUP BY:</strong> Groups rows sharing common attributes[cite: 20].</li>
-                    <li class="bg-slate-800 p-3 rounded-lg"><strong class="text-cyan-400">HAVING Clause:</strong> Filters summarized group results[cite: 22].</li>
+                    <li class="bg-slate-800 p-3 rounded-lg"><strong class="text-cyan-400">Core Functions:</strong> COUNT, SUM, MAX, and MIN.</li>
+                    <li class="bg-slate-800 p-3 rounded-lg"><strong class="text-cyan-400">GROUP BY:</strong> Groups rows sharing common attributes to compute summaries.</li>
+                    <li class="bg-slate-800 p-3 rounded-lg"><strong class="text-cyan-400">HAVING Clause:</strong> Filters summarized group results where WHERE cannot be applied.</li>
                 </ul>
             </div>
         </section>
@@ -135,14 +135,14 @@
 
     <script>
         const flashcards = [
-            { category: "Core SQL & Select", q: "What does the SELECT statement do in a relational database?", a: "Used to retrieve data from a table[cite: 33]. Corresponds to projection (π) in relational algebra[cite: 37].", code: "SELECT A1, A2 FROM r WHERE P;" },
-            { category: "String Wildcards", q: "What do the wildcard characters '%' and '_' mean in a LIKE clause?", a: "'%' replaces zero or more characters; '_' replaces exactly one arbitrary character[cite: 41, 60].", code: "WHERE ADDRESS LIKE '%Houston, TX%'" },
-            { category: "Date Extraction", q: "What does CURDATE() return?", a: "Returns the current system date in YYYY-MM-DD format[cite: 3].", code: "SELECT CURDATE();" },
-            { category: "Date Intervals", q: "How do you add 31 days to a date in MySQL?", a: "Using DATE_ADD() or its synonym ADDDATE() with an interval specifier[cite: 4].", code: "SELECT DATE_ADD('2008-01-02', INTERVAL 31 DAY);" },
-            { category: "Date Differences", q: "What is the difference between DATEDIFF and TIMESTAMPDIFF?", a: "DATEDIFF calculates total days difference[cite: 6]; TIMESTAMPDIFF accepts flexible units[cite: 6]." },
-            { category: "Aggregate & Grouping", q: "Why use HAVING instead of WHERE with aggregate functions?", a: "HAVING filters grouped summary data, whereas WHERE filters individual rows before grouping[cite: 22]." },
-            { category: "Table Joins", q: "What does an INNER JOIN return?", a: "Returns only rows that have matching values in both tables[cite: 26]." },
-            { category: "Formatting", q: "How do you format a date into weekday and full month name?", a: "Using DATE_FORMAT() with specific format specifiers[cite: 7].", code: "SELECT DATE_FORMAT(hiredate, '%W %M, %Y');" }
+            { category: "Core SQL & Select", q: "What does the SELECT statement do in a relational database?", a: "Used to retrieve data from a table. Corresponds to projection in relational algebra.", code: "SELECT A1, A2 FROM r WHERE P;" },
+            { category: "String Wildcards", q: "What do the wildcard characters '%' and '_' mean in a LIKE clause?", a: "'%' replaces zero or more characters; '_' replaces exactly one arbitrary character.", code: "WHERE ADDRESS LIKE '%Houston, TX%'" },
+            { category: "Date Extraction", q: "What does CURDATE() return?", a: "Returns the current system date in YYYY-MM-DD format.", code: "SELECT CURDATE();" },
+            { category: "Date Intervals", q: "How do you add 31 days to a date in MySQL?", a: "Using DATE_ADD() or its synonym ADDDATE() with an interval specifier.", code: "SELECT DATE_ADD('2008-01-02', INTERVAL 31 DAY);" },
+            { category: "Date Differences", q: "What is the difference between DATEDIFF and TIMESTAMPDIFF?", a: "DATEDIFF calculates total days difference; TIMESTAMPDIFF accepts flexible units." },
+            { category: "Aggregate & Grouping", q: "Why use HAVING instead of WHERE with aggregate functions?", a: "HAVING filters grouped summary data, whereas WHERE filters individual rows before grouping." },
+            { category: "Table Joins", q: "What does an INNER JOIN return?", a: "Returns only rows that have matching values in both tables." },
+            { category: "Formatting", q: "How do you format a date into weekday and full month name?", a: "Using DATE_FORMAT() with specific format specifiers.", code: "SELECT DATE_FORMAT(hiredate, '%W %M, %Y');" }
         ];
 
         let currentCardIndex = 0;
